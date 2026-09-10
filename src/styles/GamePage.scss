@@ -1,0 +1,164 @@
+@import './utils';
+
+.headerContainer {
+    @include flexCenter(row, center, space-between);
+    flex-wrap: wrap;
+    padding: 20px 30px 0 30px;
+    max-width: 1700px;
+    margin: 0 auto;
+
+    img {
+        height: 120px;
+        cursor: pointer;
+        transition: transform 0.6s;
+
+        &:hover {
+            transform: scale(1.1);
+        }
+    }
+}
+
+.score {
+    flex-shrink: 0;
+    padding: 15px;
+    margin-left: 40px;
+    background-color: $darkBlue; 
+    color: white;
+    font-size: 24px;
+    border-radius: 20px;
+    box-shadow:  0px 5px 15px #424242, -0px -5px 15px #424242;
+
+    & div:first-child {
+        margin-bottom: 10px;
+    }
+}
+
+.playGround {
+    flex: 1;
+    @include flexCenter(column, center, center);
+    gap: 30px;
+    padding: 0 40px 0 40px;
+    margin: 30px 0 30px 0;
+}
+
+.cardSection {
+    @include flexCenter(row, center, center);
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.card {
+    aspect-ratio: 1 / 1.546;
+    width: 220px;
+    transform-style: preserve-3d;
+    transition: transform 1s;
+    cursor: pointer;
+
+    &.flipped {
+        transform: rotateY(180deg);
+    }
+}
+
+.tilt {
+    height: 100%;
+    transform-style: preserve-3d;
+}
+
+.characterHolder, 
+.cardFace {
+    background-size: cover;
+    background-position: center;
+    border-radius: 25px;
+}
+
+.cardFace {
+    position: absolute;
+    @include flexCenter(column, center, space-between);
+    width: 100%;
+    height: 100%;
+    padding: 7px 8px 10px 8px;
+    flex-shrink: 0;
+
+    background-image: url(../assets/img/card_background.jpg);
+    color: white;
+    font-size: 22px;
+}
+
+.characterHolder {
+    height: 100%;
+    width: 100%;
+}
+
+.cardBack {
+    height: 100%;
+    background: url(../assets/img/card_background.jpg);
+    backface-visibility: hidden;
+    background-size: cover;
+    background-position: center;
+    border-radius: 25px;
+    transform: rotateY(180deg);
+}
+
+.name {
+    margin-top: 5px;
+}
+
+.remainIndicator {
+    color: white;
+    font-size: 20px;
+}
+
+.win {
+    position: absolute;
+    aspect-ratio: 1.82 / 1;
+    width: 800px;
+    top: 50%;
+    right: 50%;
+    transform: translate(50%, -50%);
+    z-index: 1;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+
+    background-image: url(../assets/img/won.avif);
+    background-size: cover;
+    background-position: center;
+    border-radius: 25px;
+
+    box-shadow:  0px 5px 20px #113661, -0px -5px 20px #113661;
+
+    div {
+        margin-top: 25px;
+        font-size: 40px;
+        padding: 15px 30px 15px 30px;
+        background-color: rgb(50, 104, 165);
+        color: white;
+        border-radius: 20px;
+    }
+
+    button {
+        margin-bottom: 25px;
+        font-size: 26px;
+        padding: 12px 20px 12px 20px;
+        border-radius: 20px;
+    }
+}
+
+.lose {
+    @extend .win;
+    background-image: url(../assets/img/lost.jpg);
+    box-shadow:  0px 5px 20px #611111, -0px -5px 20px #611111;
+
+    div {
+        background-color: rgb(175, 15, 15);
+    }
+}
+
+.overlay {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-color: black;
+}
