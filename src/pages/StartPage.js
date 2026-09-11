@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import logo from '../assets/img/logo.png';
+// import logo from '../assets/img/logo.png';
 import '../styles/StartPage.scss';
 
 function StartPage({ setDifficultyLevel, playClick }) {
@@ -14,8 +14,8 @@ function StartPage({ setDifficultyLevel, playClick }) {
         <>
             <div className='startPage'>
                 <motion.img 
-                    src={logo} alt="Logo"
-                    className='logo'
+                    // src={logo} alt="Logo"
+                    // className='logo'
 
                     variants={variants}
                     initial='hidden'

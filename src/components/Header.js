@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import logo from '../assets/img/logo.png';
+// import logo from '../assets/img/logo.png';
 
 function Header({
     goBackToStartPage,
@@ -17,8 +17,8 @@ function Header({
         <header>
             <div className="headerContainer">
                 <motion.img 
-                    src={logo}
-                    alt="Logo"
+                    // src={}
+                    // alt="Logo"
                     onClick={() => {
                         goBackToStartPage(); 
                         playClick();
