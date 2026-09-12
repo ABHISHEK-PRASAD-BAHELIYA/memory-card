@@ -34,10 +34,16 @@ function GamePage({
             setScore(0);
             setBestScore(0);
             charactersToPlayWith.forEach(character => {
-                character.clicked = false;
+            character.clicked = false;
             });
-        }
-    }, []);
+        };
+    }, [
+        getCharactersToPlayWith,
+        setCharactersToPlayWith,
+        setScore,
+        setBestScore,
+        charactersToPlayWith
+    ]);
 
     const handleCardClick = (character) => {
         // Prevents user from multiple clicks while card is flipping
